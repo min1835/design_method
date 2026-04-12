@@ -1,0 +1,141 @@
+/* 定義奶茶色系變數 */
+:root {
+    --bg-color: #f5f0e8;          /* 極淺奶茶色（背景） */
+    --sidebar-bg: #d9c5b2;       /* 濃奶茶色（側邊欄） */
+    --accent-color: #a68d7a;      /* 烘焙啡色（重點裝飾/按鈕） */
+    --text-main: #5d4037;         /* 深可可色（文字） */
+    --card-bg: #ffffff;           /* 純白（卡片背景） */
+    --hover-bg: #c7b198;          /* 淺烘焙色（滑鼠懸停） */
+}
+
+body {
+    font-family: "PingFang TC", "Microsoft JhengHei", sans-serif;
+    margin: 0;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    display: flex;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+}
+
+/* 側邊導覽列 - 奶茶色調 */
+.sidebar {
+    width: 280px;
+    height: 100vh;
+    background-color: var(--sidebar-bg);
+    color: var(--text-main);
+    overflow-y: auto;
+    position: sticky;
+    top: 0;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.05);
+}
+
+.sidebar-header {
+    padding: 30px 20px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.sidebar h2 {
+    margin: 0;
+    font-size: 1.4em;
+    letter-spacing: 1px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+}
+
+.sidebar li {
+    padding: 15px 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-weight: 500;
+}
+
+.sidebar li:hover {
+    background-color: var(--hover-bg);
+    padding-left: 35px; /* 加入一點縮排動效 */
+}
+
+.sidebar li.active {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+/* 主內容區 */
+.content {
+    flex-grow: 1;
+    padding: 50px;
+}
+
+header {
+    margin-bottom: 40px;
+    border-left: 5px solid var(--accent-color);
+    padding-left: 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+    color: var(--text-main);
+}
+
+header p {
+    color: var(--accent-color);
+    margin-top: 5px;
+}
+
+/* 圖片網格設計 - 圓潤柔和感 */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 25px;
+}
+
+.img-item {
+    background: var(--card-bg);
+    padding: 15px;
+    border-radius: 20px; /* 增加圓角感 */
+    box-shadow: 0 8px 20px rgba(166, 141, 122, 0.15); /* 柔和的啡色陰影 */
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.img-item:hover {
+    transform: translateY(-10px);
+}
+
+.img-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    background-color: #fafafa;
+}
+
+/* 編號文字標籤 */
+.img-number {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    color: var(--accent-color);
+    font-size: 1em;
+    background: var(--bg-color);
+    padding: 6px 0;
+    border-radius: 50px; /* 膠囊狀設計 */
+}
+
+/* 捲動軸樣式客製化（讓側邊欄更精緻） */
+.sidebar::-webkit-scrollbar {
+    width: 6px;
+}
+.sidebar::-webkit-scrollbar-thumb {
+    background: var(--accent-color);
+    border-radius: 10px;
+}
